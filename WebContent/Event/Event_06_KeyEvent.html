@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<!-- 3. 키보드 이벤트
+			- keypress()
+			- keydown()
+			- keyup()
+	 -->
+	<p>
+		<input type="text" name="user_id" id="user_id" />
+	</p>
+	
+	<p class="txt1"></p>
+	<p class="txt2"></p>
+
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<script type="text/javascript">
+
+	//keypress() : 선택한 요소에서 키보드를 눌렀을 때 발생하는 이벤트.
+	//			       문자키를 제외한 키 코드값을 반환. 영어,특문,숫자 등 제한이 있음.
+	//	형식) $("요소 선택").keypress(function(){....});
+	//keydown() : 선택한 요소에서 키보드를 눌렀을 때 이벤트가 발생.
+	//			     문자 키를 제외한 키 코드를 반환. 키보드 전체가 이벤트 대상.
+	//	형식) $("요소 선택").keydown(function(){....});
+	//keyup() : 선택한 요소에서 키보드에서 손을 떼었을 때 이벤트를 발생.
+	//	형식) $("요소 선택").keyup(function(){....});
+	$(function(){
+		$("#user_id").keypress(function(e){
+			$(".txt2").text(e.keyCode);
+		});
+		$("#user_id").keydown(function(e){
+			$(".txt1").text(e.keyCode);
+			$(this).css("background-color","yellow");
+		});
+		$("#user_id").keyup(function(e){
+			$(this).css("background-color","tomato");
+		});
+	});
+	
+</script>
+</body>
+</html>

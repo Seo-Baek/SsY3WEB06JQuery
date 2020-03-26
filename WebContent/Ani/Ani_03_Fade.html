@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<button class="btn1">fadeOut</button>
+	<button class="btn2">fadeIn</button>
+	<button class="btn3">fadeToggle</button>
+	<h2>효과 관련 내용</h2>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<script type="text/javascript">
+
+	// fadeIn() : 숨겨져 있던 요소가 점점 투명해지면서 노출이 되는 기능.
+	//	형식) $("요소 선택").fadeIn("효과 속도", 콜백함수)
+	// fadeOut() : 노출이 되어있던 요소가 점점 사라지는 기능.
+	//	형식) $("요소 선택").fadeOut("효과 속도", 콜백함수)
+	// fadeToggle() : 노출되어 있던 요소는 점점 사라지고, 
+	//                사라져 있던 요소는 선명해지면서 노출이 되는 기능.
+	//	형식) $("요소 선택").fadeToggle("효과 속도", 콜백함수)
+	$(function(){
+		const fade = setInterval(function(){$("h2").fadeToggle(1000)},6000);
+		$(".btn1").click(function(){
+			$("h2").fadeOut(1000);
+		});
+		$(".btn2").click(function(){
+			$("h2").fadeIn(400);
+		});
+		$(".btn3").click(function(){
+			fade;
+		});
+		$(".btn3").dblclick(function(){
+			clearInterval(fade);
+		});
+	});
+	// 그냥 해보고 싶어서 setInterval을 해보았다...ㅋㅋ
+	
+	
+</script>
+</body>
+</html>

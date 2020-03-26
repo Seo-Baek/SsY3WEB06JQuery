@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<!-- 객체 편집 메소드 : 선택한 요소를 복제하거나 새 요소를 생성하는 메소드들에 대하여 학습.
+					    복제하거나 새로 생성한 요소를 의도한 위치에 삽입하고 선택한 요소를 삭제하는 기능
+		
+		  객체 편집 메소드의 종류
+		  	- before() 	:
+		  	- after()
+		  	- append()
+		  	- appendTo()
+		  	- prepend()
+		  	- prependTo()
+		  	- insertBefore()
+		  	- insertAfter()
+		  	- clone()
+		  	- empty()
+		  	- remove()
+		  	- replaceAll()
+		  	- replaceWith()		    
+	 -->
+
+	<h1>객체 편집 메소드</h1>
+	<ul>
+		<li class="myList">내용</li>
+	</ul>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<script type="text/javascript">
+
+	// before()
+	// 	형식) $("요소 선택").before()
+	// after()
+	//	형식) $("요소 선택").after("새 요소")
+
+	$(function(){
+		$(".myList").before("<li>새로운 내용 추가1</li>");
+		$(".myList").after("<li>새로운 내용 추가2</li>");
+	});
+	
+</script>
+</body>
+</html>
